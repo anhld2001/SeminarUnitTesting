@@ -116,7 +116,7 @@ namespace SeminarTest.Test
                 Title = "Abcd cai gi day cung duoc",
                 IsCompleted = false
             };
-            _serviceMock.Setup(x => x.EditExistToDo(toDoFake, id)).ReturnsAsync(toDoFake);
+            _serviceMock.Setup(x => x.EditExistToDo(toDoFake, id)).ReturnsAsync(() => null);
             //action
             var result = await _sut.EditToDo(toDoFake, id);
             var respone = result.Result as NotFoundResult;
